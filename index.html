@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Sunnyside agency landing page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="flow" style="--flow-spacer: 10vh">
+            <nav class="main-nav">
+                <img src="images/logo.svg" alt="logo" class="logo--header">
+                <ul class="main-nav__links main-nav__links--show | list-style-none text-white" id="main-nav__links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#"> Project</a></li>
+                    <li><button class="main-nav__button | ff-primary fw-bold uppercase">Contact</button></li>
+                </ul>
+                <button class="main-nav__hamburger" onclick="toggle_nav()"><img src="images/icon-hamburger.svg" alt=""></button>
+            </nav>
+            <h1 class="letter-spacing-large uppercase text-center text-white">We Are Creatives</h1>
+            <img src="images/icon-arrow-down.svg" alt="arrow" class="center-x" id="arrow">
+        </div>
+    </header>
+    <main>
+        <section class="main-grid">
+            <div class="img-wrapper">
+                <img src="images/mobile/image-transform.jpg" alt="">
+            </div>
+            <div class="text-container | center-x center-y">
+                <div class="flow">
+                    <h2>Transform Your Brand</h2>
+                    <p>
+                        We are a full-service creative agency specializing in helping brands grow fast. 
+                        Engage your clients through compelling visuals that do most of the marketing for
+                        you.
+                    </p>
+                    <div><a href="#" class="learn-more learn-more--cp2 | ff-primary fw-bold">Learn More</a></div>
+                </div>
+            </div>
+            <div class="img-wrapper">
+                <img src="images/mobile/image-stand-out.jpg" alt="">
+            </div>
+            <div class="text-container | center-x center-y">
+                <div class="flow">
+                    <h2>Stand out to the right audience</h2>
+                    <p>Using a collaborative formula of designers, researchers, photographers, 
+                        videographers, and copywriters, we’ll build and extend your brand in digital 
+                        places. 
+                    </p>
+                    <div><a href="#" class="learn-more learn-more--cp1 | ff-primary fw-bold">Learn More</a></div>
+                </div>
+            </div>
+            <div class="text-over-img-container">
+                <div class="img-wrapper">
+                    <img src="images/mobile/image-graphic-design.jpg" id='graphic-design' alt="">
+                </div>
+                <div class="text-over-img | text-center text-primary-three">
+                    <div class="flow" style="--flow-spacer: 5%;">
+                        <div class="text-over-img-header | fw-bold ff-primary">Graphic Design</div>
+                        <div class="text-over-img-body">
+                            Great design makes you memorable. We deliver artwork that underscores 
+                            your brand message and captures potential clients’ attention.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-over-img-container">
+                <div class="img-wrapper">
+                    <img src="images/mobile/image-photography.jpg" id='photography' alt="">
+                </div>
+                <div class="text-over-img | text-center text-primary-four">
+                    <div class="flow" style="--flow-spacer: 5%;">
+                        <div class="text-over-img-header | fw-bold ff-primary">Photography</div>
+                        <div class="text-over-img-body">
+                            Increase your credibility by getting the most stunning, high-quality 
+                            photos that improve your business image.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section | text-center flow" style="--flow-spacer: 3.6rem;">
+            <h3 class="text-neutral-three letter-spacing-large">Client Testimonials</h3>
+            <div class="testimonials-grid | center-x">
+                <article class="testimonial | flow">
+                    <div class="testimonial__img-wrapper center-x">
+                        <img src="images/image-emily.jpg" alt="">
+                    </div>
+                    <div class="testimonial__body | text-neutral-two">
+                       We put our trust in Sunnyside and they delivered, making sure our needs were 
+                       met and deadlines were always hit.
+                    </div>
+                    <div>
+                        <div class="flow" style="--flow-spacer: 0.25rem;">
+                            <p class="ff-primary fw-bold">Emily R.</p>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial | flow">
+                    <div class="testimonial__img-wrapper center-x">
+                        <img src="images/image-thomas.jpg" alt="">
+                    </div>
+                    <div class="testimonial__body | text-neutral-two">
+                        Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success
+                        made it a satisfying and enjoyable experience.
+                    </div>
+                    <div>
+                        <div class="flow" style="--flow-spacer: 0.25rem;">
+                            <p class="ff-primary fw-bold">Thomas S.</p>
+                            <p>Chief Operating Officer</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial | flow">
+                    <div class="testimonial__img-wrapper | center-x">
+                        <img src="images/image-jennie.jpg" alt="">
+                    </div>
+                    <div class="testimonial__body | text-neutral-two">
+                        Incredible end result! Our sales increased over 400% when we worked with 
+                        Sunnyside. Highly recommended!
+                    </div>
+                    <div>
+                        <div class="flow" style="--flow-spacer: 0.25rem;">
+                            <p class="ff-primary fw-bold">Jennie F.</p>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <section class="img-gallery-grid">
+        <div class="img-wrapper"><img src="images/mobile/image-gallery-milkbottles.jpg" id='milk-bottles' alt=""></div>
+        <div class="img-wrapper"><img src="images/mobile/image-gallery-orange.jpg" id='orange' alt=""></div>
+        <div class="img-wrapper"><img src="images/mobile/image-gallery-cone.jpg" id='cone' alt=""></div>
+        <div class="img-wrapper"><img src="images/mobile/image-gallery-sugar-cubes.jpg" id='sugar-cubes' alt=""></div>
+    </section>
+
+    <footer class="footer | bg-neutral-one">
+        <div class="flow" style="--flow-spacer: 2rem;">
+            <img src="images/logo.svg" alt="logo" class="logo--footer center-x">
+            <nav class="footer__nav | text-primary-three text-center">
+                <a href="#"><span>About</span></a>
+                <a href="#"><span>Services</span></a>
+                <a href="#"><span>Projects</span></a>
+            </nav>
+            <ul class="footer__social-links | list-style-none" style="--flow-spacer: 3.5rem;">
+                <a href="#"><object type="image/svg+xml" data="images/icon-facebook.svg"></object></a>
+                <a href="#"><object type="image/svg+xml" data="images/icon-instagram.svg"></object></a>
+                <a href="#"><object type="image/svg+xml" data="images/icon-twitter.svg"></object></a>
+                <a href="#"><object type="image/svg+xml" data="images/icon-pinterest.svg"></object></a>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
