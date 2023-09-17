@@ -34,6 +34,7 @@ Setting Custom Properties
 
     /* Font Sizes */
     --fs-body: clamp(0.94rem, 0.88rem + 0.27vw, 1.13rem);
+    --fs-h3: clamp(1.05rem, calc(0.95rem + 0.51vw), 1.41rem);
     --fs-h2: clamp(1.35rem, 1.23rem + 0.58vw, 1.76rem);
     --fs-h1: clamp(1.94rem, 1.71rem + 1.15vw, 2.75rem);
 }
@@ -109,9 +110,19 @@ a {
     margin-top: var(--flow-spacer, 1.4rem);
 }
 
+/*
+Custom ScrollBar
+*/
+::-webkit-scrollbar {width: 13px;}
+::-webkit-scrollbar-track {background: var(--c-neutral-one);}
+::-webkit-scrollbar-thumb {background: var(--c-neutral-four);}
+::-webkit-scrollbar-thumb:hover {background: var(--c-primary-two);}
+
+
 /***************
 Specific Styling
 ****************/
+body {overflow-x: hidden;}
 
 /* Navigation bar */
 .logo--footer {filter: invert(28%) sepia(21%) saturate(971%) hue-rotate(116deg) 
@@ -131,6 +142,14 @@ Specific Styling
 
     gap: 2rem;
 }
+
+.main-nav__links {
+    margin: 0;
+    padding: 0;
+
+    gap: 2rem;
+}
+.main-nav__links :not(button):hover {text-decoration: underline; font-weight: var(--fw-extra-bold);}
 
 .main-nav__links--hide {display: flex;}
 
@@ -159,8 +178,8 @@ button.main-nav__hamburger {
 }
 
 @keyframes float {
-    from, to {transform: translateY(0);}
-    50% {transform: translateY(6vh);}
+    from, to {transform: translateY(-3vh);}
+    50% {transform: translateY(3vh);}
 }
 
 /* Header */
@@ -175,7 +194,7 @@ button.main-nav__hamburger {
     background-size: cover;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 751px) {
     .main-header {
         background-image: url(../images/desktop/image-header.jpg);
     }
@@ -189,12 +208,11 @@ button.main-nav__hamburger {
 }
 
 @media (max-width: 750px) {
-    ul.main-nav__links {
+    .main-nav__links {
         position: absolute;
         top: 5rem;
         left: 50%;
         transform: translateX(-50%);
-        
         width: calc(100% - 3rem);
         padding-block: 1rem;
 
@@ -205,6 +223,18 @@ button.main-nav__hamburger {
         box-shadow: 0.3rem 0.3rem 0.2rem var(--c-primary-five);
 
         z-index: 999999;
+    }
+
+    @keyframes fadeIn {
+        from {transform: translateX(200%);} 
+        to {transform: translateX(-50%);}
+    }
+    @keyframes fadeOut {
+        from {transform: translateX(-50%);} 
+        to {
+            transform: translateX(100%);
+            display: none;
+        }
     }
 
     .main-nav__links::after {
@@ -230,8 +260,14 @@ button.main-nav__hamburger {
 
     .main-nav__button {background-color: var(--c-primary-two);}
 
-    .main-nav__links--hide {display: none;}
-    .main-nav__links--show {display: flex;}
+    .main-nav__links--hide {
+        animation: 0.5s fadeOut 0s;
+        animation-fill-mode: both;
+    }
+    .main-nav__links--show {
+        display: flex;
+        animation: 0.5s fadeIn 0s;
+    }
 }
 
 
@@ -272,7 +308,7 @@ Main Grid
     height: 0.4em;
     border-radius: 0.5em;
     z-index: -999;
-    opacity: 0.4;
+    opacity: 0.3;
     transition: all .2s;
 }
 .learn-more--cp1::after {background-color: var(--c-primary-one);}
@@ -280,7 +316,7 @@ Main Grid
 
 .learn-more:hover::after {
     opacity: 1;
-    height: 0.45em;
+    height: 0.5em;
 }
 .text-over-img-container {position: relative;}
 .text-over-img {
@@ -350,7 +386,7 @@ Client Testimonials
     width: 3rem;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .testimonial__img-wrapper img {
