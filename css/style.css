@@ -116,13 +116,16 @@ Custom ScrollBar
 ::-webkit-scrollbar {width: 13px;}
 ::-webkit-scrollbar-track {background: var(--c-neutral-one);}
 ::-webkit-scrollbar-thumb {background: var(--c-neutral-four);}
-::-webkit-scrollbar-thumb:hover {background: var(--c-primary-two);}
+::-webkit-scrollbar-thumb:hover {background: rgba(255, 255, 0, 0.459);}
 
 
 /***************
 Specific Styling
 ****************/
-body {overflow-x: hidden;}
+.main-container {
+    position: relative;
+    overflow-x: hidden;
+}
 
 /* Navigation bar */
 .logo--footer {filter: invert(28%) sepia(21%) saturate(971%) hue-rotate(116deg) 
@@ -149,10 +152,10 @@ body {overflow-x: hidden;}
 
     gap: 2rem;
 }
-.main-nav__links :not(button):hover {text-decoration: underline; font-weight: var(--fw-extra-bold);}
-
-.main-nav__links--hide {display: flex;}
-
+.main-nav__links :not(button):hover, .main-nav__links :not(button):focus {
+    text-decoration: underline; 
+    font-weight: var(--fw-extra-bold);
+}
 
 .main-nav__button {    
     background-color: var(--c-white);
@@ -200,7 +203,7 @@ button.main-nav__hamburger {
     }
     .main-nav__hamburger {display: none;}
 
-    .main-nav__button:hover {
+    .main-nav__button:hover, .main-nav__button:focus {
         color: var(--c-white);
         background-color: rgba(255, 255, 255, 0.45);
     }
@@ -209,9 +212,9 @@ button.main-nav__hamburger {
 
 @media (max-width: 750px) {
     .main-nav__links {
+        display: none;
         position: absolute;
         top: 5rem;
-        left: 50%;
         transform: translateX(-50%);
         width: calc(100% - 3rem);
         padding-block: 1rem;
@@ -226,13 +229,19 @@ button.main-nav__hamburger {
     }
 
     @keyframes fadeIn {
-        from {transform: translateX(200%);} 
-        to {transform: translateX(-50%);}
+        from {
+            display: flex;
+            transform: scaleY(0);
+        } 
+        to {transform: scaleY(100%);}
     }
     @keyframes fadeOut {
-        from {transform: translateX(-50%);} 
+        from {
+            display: flex;
+            transform: scaleY(100%);
+        } 
         to {
-            transform: translateX(100%);
+            transform: scaleY(0%);
             display: none;
         }
     }
@@ -261,12 +270,10 @@ button.main-nav__hamburger {
     .main-nav__button {background-color: var(--c-primary-two);}
 
     .main-nav__links--hide {
-        animation: 0.5s fadeOut 0s;
-        animation-fill-mode: both;
+        animation: 0.5s fadeOut 0s forwards;
     }
     .main-nav__links--show {
-        display: flex;
-        animation: 0.5s fadeIn 0s;
+        animation: 0.5s fadeIn 0s forwards;
     }
 }
 
@@ -308,13 +315,13 @@ Main Grid
     height: 0.4em;
     border-radius: 0.5em;
     z-index: -999;
-    opacity: 0.3;
+    opacity: 0.35;
     transition: all .2s;
 }
 .learn-more--cp1::after {background-color: var(--c-primary-one);}
 .learn-more--cp2::after {background-color: var(--c-primary-two);}
 
-.learn-more:hover::after {
+.learn-more:hover::after, .learn-more:focus::after {
     opacity: 1;
     height: 0.5em;
 }
@@ -436,7 +443,7 @@ Footer
     justify-content: center;
 }
 
-.footer__nav *:hover {color: var(--c-white);}
-.footer__social-links a:hover object {filter: brightness(0) invert(1);}
+.footer__nav *:hover, .footer__nav *:focus {color: var(--c-white);}
+.footer__social-links a:hover object, .footer__social-links a:focus object {filter: brightness(0) invert(1);}
 
 .logo--header {filter: invert(100%) brightness(98%)}
