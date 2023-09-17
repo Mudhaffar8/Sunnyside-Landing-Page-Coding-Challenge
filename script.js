@@ -11,7 +11,7 @@ function toggle_nav() {
     }
 }
 
-function resizeFn() {
+function remove_navStyles() {
     if (window.innerWidth >= 751 && (nav.classList.contains('main-nav__links--show') || 
         nav.classList.contains('main-nav__links--hide'))) {
         nav.classList.remove('main-nav__links--show');
@@ -19,6 +19,6 @@ function resizeFn() {
     }
 }
 
-window.onresize = resizeFn;
-resizeFn();
+window.onresize = remove_navStyles;
+remove_navStyles();
 
