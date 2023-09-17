@@ -229,10 +229,7 @@ button.main-nav__hamburger {
     }
 
     @keyframes fadeIn {
-        from {
-            display: flex;
-            transform: scaleY(0);
-        } 
+        from {transform: scaleY(0);} 
         to {transform: scaleY(100%);}
     }
     @keyframes fadeOut {
@@ -273,6 +270,7 @@ button.main-nav__hamburger {
         animation: 0.5s fadeOut 0s forwards;
     }
     .main-nav__links--show {
+        display: flex;
         animation: 0.5s fadeIn 0s forwards;
     }
 }
