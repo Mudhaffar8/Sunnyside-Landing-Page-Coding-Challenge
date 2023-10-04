@@ -5,6 +5,8 @@
 ## Welcome! 👋
 This is a fully responsive, mobile-first website mock-up based on a coding challenge from [Frontend Mentor](https://www.frontendmentor.io). 
 
+The Live-site is available here: https://mudhaffar8.github.io/Sunnyside-Landing-Page-Coding-Challenge/
+
 ### Built with
 - Semantic HTML5 markup
 - CSS custom properties
