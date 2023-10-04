@@ -4,3 +4,8 @@
 
 ## Welcome! 👋
 This is a fully responsive, mobile-first website mock-up based on a coding challenge from [Frontend Mentor](https://www.frontendmentor.io). 
+
+### Built with
+- Semantic HTML5 markup
+- CSS custom properties
+- Vanilla Javascript
